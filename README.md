@@ -1,46 +1,57 @@
 # Hospitality Dashboard Project
 
-## Overview
-This repository contains dashboards and analysis artifacts for a hospitality dataset (dashboards, visualizations, and SQL scripts used to prepare and summarize the data).
+A collection of dashboards and analysis artifacts built from a hospitality dataset — Excel dashboards, Tableau workbooks, Power BI reports, and the SQL used to prepare metrics.
 
-## Files in this folder
-- Hospitality Dashboard Excel.xlsm — Macro-enabled Excel workbook with dashboards and analyses (Excel, macros/VBA).  
-- Hospitality Dashboard PDF.pdf — Exported PDF of the dashboard/report.  
-- Hospitality Dashboard Power BI.pbix — Power BI Desktop report (open with Power BI Desktop).  
-- Hospitality Dashboard Tableau 2.twbx — Packaged Tableau workbook (open with Tableau Desktop).  
-- Hospitality Dashboard Tableau.twbx — Packaged Tableau workbook (alternate or original workbook).  
-- Hospitality Data Analysis SQL.sql — SQL script containing aggregated queries used for the analyses and dashboards.
+**Highlights**
+- Interactive Excel dashboards (macros-enabled)  
+- Packaged Tableau workbooks (.twbx)  
+- Power BI report (.pbix)  
+- SQL queries used to compute revenue, occupancy, cancellation rate, and trend analysis
 
-## SQL script summary
-The `Hospitality Data Analysis SQL.sql` file contains the primary queries used to generate metrics for the dashboards. Key queries include:
+**Screenshots**
 
-- Total revenue (sum of `revenue_realized` from `fact_bookings`).
-- Occupancy and utilization calculations (using `fact_aggregated_bookings` and `capacity`).
-- Cancellation rate (percentage of bookings with `booking_status = 'Cancelled'`).
-- Total bookings (distinct `booking_id`).
-- Daily and weekly trend analyses (revenue and bookings grouped by `check_in_date` and `week_no`).
-- Weekday vs weekend revenue and bookings (joined with `dim_date`).
-- Revenue by city/property (joined with `dim_hotels`).
-- Room-class level revenue (joined with `dim_rooms`).
-- Booking status summary (counts by `booking_status`).
+Large previews of the project dashboards and visuals (click to view full size):
 
-Run these queries against the `hospitality` database (or the schema containing the listed dimension and fact tables) to reproduce the summary tables used by the dashboards.
+![Dashboard preview 1](image.png)
 
-## How to open / run
+![Dashboard preview 2](image-1.png)
 
-- Excel: open with Microsoft Excel and enable macros to view interactive dashboard elements.  
-- Tableau: open the `.twbx` files with Tableau Desktop.  
-- Power BI: open the `.pbix` file with Power BI Desktop.  
-- SQL: run `Hospitality Data Analysis SQL.sql` in your SQL client connected to the hospitality database.
+![Project word cloud / header image](image-2.png)
+
+## Files in this repository
+- Hospitality Dashboard Excel.xlsm — Macro-enabled Excel workbook with dashboards and analyses.  
+- Hospitality Dashboard PDF.pdf — Exported PDF of dashboards and report.  
+- Hospitality Dashboard Power BI.pbix — Power BI Desktop report.  
+- Hospitality Dashboard Tableau 2.twbx — Packaged Tableau workbook.  
+- Hospitality Dashboard Tableau.twbx — Packaged Tableau workbook (alternate).  
+- Hospitality Data Analysis SQL.sql — SQL script containing the queries used to compute metrics.
+
+## SQL summary (quick)
+- Total revenue: sum of `revenue_realized` from `fact_bookings`.  
+- Occupancy / utilization: calculated from `fact_aggregated_bookings` and `capacity`.  
+- Cancellation rate: percent where `booking_status = 'Cancelled'`.  
+- Total bookings: distinct `booking_id`.  
+- Trends: daily and weekly revenue/bookings (by `check_in_date`, `week_no`).
+
+## How to view
+- Open the Excel file with Microsoft Excel (enable macros to use interactive features).  
+- Open the `.twbx` files with Tableau Desktop.  
+- Open the `.pbix` with Power BI Desktop.  
+- Run `Hospitality Data Analysis SQL.sql` in your SQL client connected to the dataset schema.
 
 ## Notes & suggestions
-- Keep a copy of the raw data source used to build the dashboards.  
-- If sharing on GitHub, consider exporting non-binary extracts (CSV sample of the data or documentation) and including a brief data dictionary.  
+- This repository currently stores binary report files — consider adding small CSV sample extracts and a data dictionary to make the project more reproducible.  
+- Optionally add a `LICENSE` file (e.g., MIT) if you want to publish the project publicly.
 
-## License & Contact
-This repository does not include an explicit license. If you want one, add a `LICENSE` file (for example, MIT).  
+---
 
-If you want, I can:  
-- add this `README.md` to the repo,  
-- create a short `LICENSE` file, or  
-- commit these files to a GitHub repo and push (if you provide repo access or remote URL).
+If you'd like, I can also:
+- add a short `LICENSE` (MIT) and push it,  
+- optimize the screenshots (resize / compress) before commit, or  
+- create a short CONTRIBUTING or USAGE guide with sample SQL/result snapshots.
+
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
