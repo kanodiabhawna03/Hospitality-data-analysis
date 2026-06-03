@@ -1,13 +1,10 @@
-# Ignore screenshot source files embedded directly in README
-excel\ dashboard.png
-power\ bi\ dashboard.png
-tableau\ dashboard.png
-tableau\ dashboard\ 2.png
-
-# Ignore older preview images
-image-*.png
-
-# Ignore generated helper files
+# Ignore Python artifacts and temporary files
+*.pyc
+__pycache__/
 b64/
-build_readme.py
-make_b64.py
+*.swp
+*.swo
+.DS_Store
+
+# Ignore legacy image exports not used in the current README
+image*.png
